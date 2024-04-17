@@ -28,6 +28,7 @@ export function dinners(num_t){
     if (regex3.test(num_t) == true || regex3_3.test(num_t) == true) {
         alert("TARJETA VALIDA");
     }
+    
     else {
         throw Error;
     }

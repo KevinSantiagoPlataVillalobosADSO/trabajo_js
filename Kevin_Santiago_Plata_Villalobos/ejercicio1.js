@@ -18,16 +18,18 @@ import {visa, american, dinners, discover, master} from "./modulo1.js"
 let tipo = parseInt(prompt("INGRESE SU TIPO DE TARJETA \n 1. American Express \n 2. Diners Club \n 3. Discover \n 4. Mastercard \n 5. Visa \n (DIGITE EL NUMERO DE LA OPCION )")) 
 for (let i = 0; i < 1; i++) {   
     try {
-        let num_t = parseInt(prompt("INGRESE SU NUMERO DE TARJETA"));
+        let num_t = prompt("INGRESE SU NUMERO DE TARJETA");
         console.log(num_t)
+        if(isNaN(num_t)){
+            alert("SOLO NUMEROS, LETRAS INVALIDAS")
+        }
+        if(num_t.length > 17){
+            alert("mas de 16 caracteres")
+        }
         if(num_t < 0 ){
-            alert("SOLO NUMEROS positivos y menos de 16 caracteres")
+            alert("SOLO NUMEROS positivos y no mas de 16 caracteres")
             throw Error;
         } 
-        else if(!Number.isInteger(num_t)){
-            alert("SOLO ENTEROS")
-            throw Error;
-        }
         else{
             switch (tipo) {
                 case 1:
