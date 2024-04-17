@@ -18,7 +18,7 @@ import {visa, american, dinners, discover, master} from "./modulo1.js"
 let tipo = parseInt(prompt("INGRESE SU TIPO DE TARJETA \n 1. American Express \n 2. Diners Club \n 3. Discover \n 4. Mastercard \n 5. Visa \n (DIGITE EL NUMERO DE LA OPCION )")) 
 for (let i = 0; i < 1; i++) {   
     try {
-        let num_t = prompt("INGRESE SU MUMERO DE TARJETA");
+        let num_t = parseInt(prompt("INGRESE SU MUMERO DE TARJETA"));
         switch (tipo) {
             case 1:
                 american(num_t);

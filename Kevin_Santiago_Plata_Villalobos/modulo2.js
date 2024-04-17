@@ -15,7 +15,7 @@ export function primos(num){
             if (num[i] == 2 || num[i] == 3){
                 primo++;
             }
-            if (num[i] % 2 != 0 && num[i] % 3 != 0 && num[i] % 5 != 0 ){
+            if (num[i] % 2 != 0 && num[i] % 3 != 0){
                 primo++;
             }
         }
