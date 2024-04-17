@@ -18,34 +18,45 @@ import {visa, american, dinners, discover, master} from "./modulo1.js"
 let tipo = parseInt(prompt("INGRESE SU TIPO DE TARJETA \n 1. American Express \n 2. Diners Club \n 3. Discover \n 4. Mastercard \n 5. Visa \n (DIGITE EL NUMERO DE LA OPCION )")) 
 for (let i = 0; i < 1; i++) {   
     try {
-        let num_t = parseInt(prompt("INGRESE SU MUMERO DE TARJETA"));
-        switch (tipo) {
-            case 1:
-                american(num_t);
-                break;
-            
-            case 2:
-                dinners(num_t);
-                break;
-            
-            case 3:
-                discover(num_t);
-                break;
-
-            case 4:
-                master(num_t);
-                break;
-
-            case 5:
-                visa(num_t);
-                break;
-            default:
-                break;
-        }   
+        let num_t = parseInt(prompt("INGRESE SU NUMERO DE TARJETA"));
+        console.log(num_t)
+        if(num_t < 0 ){
+            alert("SOLO NUMEROS positivos y menos de 16 caracteres")
+            throw Error;
+        } 
+        else if(!Number.isInteger(num_t)){
+            alert("SOLO ENTEROS")
+            throw Error;
+        }
+        else{
+            switch (tipo) {
+                case 1:
+                    american(num_t);
+                    break;
+                
+                case 2:
+                    dinners(num_t);
+                    break;
+                
+                case 3:
+                    discover(num_t);
+                    break;
+    
+                case 4:
+                    master(num_t);
+                    break;
+    
+                case 5:
+                    visa(num_t);
+                    break;
+                default:
+                    break;
+            } 
+        }
+          
     } 
     catch (error) {
         alert("algo fallo, Ingrese su tarjeta de nuevo");
         i--;
-        console.log(i)
     }
 }
