@@ -2,7 +2,14 @@ let cat_num = parseInt(prompt("INGRESE LA CANTIDAD DE NUMEROS A PROCESAR"));
 let num = [];
 for (let i = 0; i < cat_num; i++) {
     let numero = parseInt(prompt("INGRESE EL NUMERO"))
-    num[i] = numero;
+    if(isNaN(numero)){
+        alert("SOLO INGRESE NUMEROS");
+        i--;
+    }
+    else{
+        num[i] = numero;
+    }
+    
 }
 
 let num_mayor = function(...num){
